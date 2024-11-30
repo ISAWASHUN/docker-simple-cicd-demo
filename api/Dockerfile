@@ -4,7 +4,8 @@ CMD ["bash"]
 # build
 FROM base AS build
 COPY . /workspace
-RUN ./gradler build
+WORKDIR /workspace
+RUN ./gradlew build
 
 # production
 FROM openjdk:17 AS production
